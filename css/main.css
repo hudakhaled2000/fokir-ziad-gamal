@@ -1,0 +1,1342 @@
+/*
+  ==============================
+    OUTLINE
+  ==============================
+    01- Imports
+      01.01- Google Fonts
+    02- Reset Styles
+      02.01- General
+      02.02- Body
+      02.03- Headings
+      02.04- Unordered Lists
+      02.05- Anchors
+      02.06- Images
+      02.07- Buttons
+      02.08- Bold Tag
+      02.09- Address
+      02.10- Fieldsets
+    03- Utility Classes
+      03.01- Flex Center
+      03.02- Flex Center Between
+      03.03- Float Fix
+      03.04- Container
+      03.05- Overlay
+      03.06- Screen Readers Only
+      03.07- Active Link
+      03.08- Primary Button
+    04- Page Styles
+      04.01- Header
+        ANIMATION
+      04.02- Main Content
+        04.02.01- Intro
+        04.02.02- Our Services
+        04.02.03- Our Portfolio
+        04.02.04- Stats
+        04.02.05- Client's Feedback
+        04.02.06- Our Blog
+        04.02.07- Contact Us
+      04.03- Footer
+    05- Responsive Styles
+      05.01- Break Point at 0450px
+        05.01.01- Utility Classes
+          05.01.01.01- Container
+      05.02- Break Point at 0768px
+        05.02.01- Utility Classes
+          05.02.01.01- Container
+        05.02.02- Page Styles
+          05.02.02.01- Header
+          05.02.02.02- Main Content
+            05.02.02.02.01- Intro
+            05.02.02.02.02- Our Services
+            05.02.02.02.03- Our Portfolio
+            05.02.02.02.04- Stats
+            05.02.02.02.05- Client's Feedback
+            05.02.02.02.06- Our Blog
+            05.02.02.02.07- Contact Us
+          05.02.02.03- Footer
+      05.03- Break Point at 0992px
+        05.03.01- Utility Classes
+          05.03.01.01- Container
+        05.03.02- Page Styles
+          05.03.02.01- Header
+          05.03.02.02- Main Content
+            05.03.02.02.01- Intro
+            05.03.02.02.02- Our Services
+            05.03.02.02.03- Our Portfolio
+            05.03.02.02.04- Client's Feedback
+            05.03.02.02.05- Our Blog
+            05.03.02.02.06- Contact Us
+      05.04- Break Point at 1200px
+        05.04.01- Utility Classes
+          05.04.01.01- Container
+        05.04.02- Page Styles
+          05.04.02.01- Main Content
+            05.04.02.01.01- Intro
+            05.04.02.01.02- Our Services
+            05.04.02.01.03- Our Portfolio
+            05.04.02.01.04- Stats
+            05.04.02.01.05- Client's Feedback
+            05.04.02.01.06- Our Blog
+            05.04.02.01.07- Contact Us
+*/
+
+/*==============================
+  01- Imports
+==============================*/
+
+/* 01.01- Google Fonts
+==============================*/
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700");
+
+/*==============================
+  02- Reset Styles
+==============================*/
+
+/* 02.01- General
+==============================*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 02.02- Body
+==============================*/
+body {
+  color: #555555;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+/* 02.03- Headings
+==============================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333333;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+/* 02.04- Unordered Lists
+==============================*/
+ul {
+  list-style: none;
+}
+
+/* 02.05- Anchors
+==============================*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 02.06- Images
+==============================*/
+img {
+  display: block;
+  width: 100%;
+}
+
+/* 02.07- Buttons
+==============================*/
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+
+/* 02.08- Bold Tag
+==============================*/
+b {
+  font-weight: 500;
+  color: #333333;
+}
+
+/* 02.09- Address
+==============================*/
+address {
+  font-style: normal;
+}
+
+/* 02.10- Fieldsets
+==============================*/
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/*==============================
+  03- Utility Classes
+==============================*/
+
+/* 03.01- Flex Center
+==============================*/
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* 03.02- Flex Center Between
+==============================*/
+.flex_center_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 03.03- Float Fix
+==============================*/
+.float_clear {
+  clear: both;
+}
+
+/* 03.04- Container
+==============================*/
+.container {
+  max-width: 100%;
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+/* 03.05- Overlay
+==============================*/
+.overlay_80 {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+}
+
+/* 03.06- Screen Readers Only
+==============================*/
+.screen_readers_only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 03.07- Active Link
+==============================*/
+.active_link {
+  color: #ff305b !important;
+}
+
+/* 03.08- Primary Button
+==============================*/
+.primary-button {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  background-color: #ff305b;
+  padding: 8px 10px;
+  border-radius: 4px;
+  transition: background-color 300ms;
+}
+
+.primary-button:hover {
+  background-color: #ec2403;
+}
+
+/*==============================
+  04- Page Styles
+==============================*/
+
+/* 04.01- Header
+==============================*/
+.page-header {
+  height: 100svh;
+  background-image: url(../assets/imgs/hero\ img.jpg);
+  background-size: cover;
+  background-position: center center;
+  --title1-width: 78px;
+  --title2-width: 89px;
+}
+
+.page-header .header-top {
+  padding-block: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-header .logo {
+  color: #ff305b;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.page-header .header-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.page-header .header-hero .heading {
+  color: #ff305b;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.page-header .header-hero .heading-prefix,
+.page-header .header-hero .heading-subtitles {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.page-header .header-hero .heading-prefix {
+  font-size: 22px;
+}
+
+.page-header .header-hero .heading-subtitles {
+  font-size: 18px;
+  line-height: 1.2;
+  position: relative;
+}
+
+.page-header .header-hero .heading-subtitles * {
+  display: inline-block;
+}
+
+.page-header .header-hero .heading-subtitles .title {
+  position: relative;
+}
+
+.page-header .header-hero .heading-subtitles .title_1,
+.page-header .header-hero .heading-subtitles .title_2 {
+  transform: translateY(6px);
+  padding-right: 2px;
+  overflow: hidden;
+}
+
+.page-header .header-hero .heading-subtitles .title_1 {
+  animation: swap-title_1 2.5s alternate infinite;
+}
+
+.page-header .header-hero .heading-subtitles .title_2 {
+  animation: swap-title_2 2.5s alternate infinite;
+  position: absolute;
+  left: 0;
+}
+
+.page-header .header-hero .heading-subtitles .title_1::after,
+.page-header .header-hero .heading-subtitles .title_2::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: white;
+}
+
+.page-header .nav_toggle-button {
+  display: block;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.page-header .nav_toggle-button:hover {
+  cursor: pointer;
+}
+
+.page-header .nav_toggle-button > span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: white;
+}
+
+.page-header .nav_toggle-button > span:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.page-header .nav-links {
+  color: white;
+  font-weight: 300;
+  display: none;
+}
+
+.page-header .nav-links a {
+  letter-spacing: 0.5px;
+  transition: color 400ms;
+}
+
+.page-header .nav-links a:hover {
+  color: #ff305b;
+}
+
+.page-header .nav-links li:not(:first-child) a {
+  padding-left: 8px;
+}
+
+.page-header .nav-links li:not(:last-child) a {
+  padding-right: 8px;
+}
+
+/* ANIMATION */
+
+@keyframes swap-title_1 {
+  0% {
+    width: var(--title1-width);
+    opacity: 1;
+  }
+
+  25% {
+    width: var(--title1-width);
+    opacity: 1;
+  }
+
+  49.9% {
+    opacity: 1;
+  }
+
+  50% {
+    width: 0;
+    opacity: 0;
+  }
+
+  75% {
+    width: var(--title1-width);
+    opacity: 0;
+  }
+
+  100% {
+    width: var(--title1-width);
+    opacity: 0;
+  }
+}
+
+@keyframes swap-title_2 {
+  0% {
+    width: var(--title2-width);
+    opacity: 0;
+  }
+
+  25% {
+    width: var(--title2-width);
+    opacity: 0;
+  }
+
+  49.9% {
+    opacity: 0;
+  }
+
+  50% {
+    width: 0;
+    opacity: 1;
+  }
+
+  75% {
+    width: var(--title2-width);
+    opacity: 1;
+  }
+
+  100% {
+    width: var(--title2-width);
+    opacity: 1;
+  }
+}
+
+/* 04.02- Main Content
+==============================*/
+
+.page-content section {
+  padding-block: 60px;
+  text-align: center;
+}
+
+.page-content section .heading {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 30px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.page-content section .heading::after,
+.page-content section .heading::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.page-content section .heading::before {
+  width: 70px;
+  padding-block: 4px 5px;
+  border: #ff305b solid;
+  border-width: 1px 0;
+  bottom: 0;
+}
+
+.page-content section .heading::after {
+  background-color: #ff305b;
+  height: 1px;
+  width: 160px;
+  bottom: 5px;
+}
+
+.page-content #services-section,
+.page-content #stats-section,
+.page-content #blog-section {
+  background-color: #f1f1f1;
+}
+
+/* 04.02.01- Intro */
+#intro-section {
+  text-align: start;
+}
+
+#intro-section .socials {
+  position: relative;
+}
+
+#intro-section img {
+  border-radius: 5px;
+}
+
+#intro-section .socials-links {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  transition-property: height, opacity;
+  transition-duration: 500ms;
+}
+
+#intro-section img:hover + .socials-links,
+#intro-section .socials-links:hover {
+  height: 100%;
+  opacity: 1;
+}
+
+#intro-section .socials-links li {
+  display: inline-block;
+  font-size: 20px;
+  margin-inline: 5px;
+}
+
+#intro-section .socials-links a {
+  transition: color 300ms;
+}
+
+#intro-section .socials-links a:hover {
+  color: #ff305b;
+}
+
+#intro-section .about {
+  margin-top: 30px;
+}
+
+#intro-section .about .heading {
+  line-height: 22px;
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding-left: 13px;
+  padding-bottom: 0;
+}
+
+#intro-section .about .heading::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 100%;
+  background-color: #ff305b;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#intro-section .about .heading::after {
+  width: 0;
+  height: 0;
+}
+
+#intro-section .about .paragraph {
+  border-bottom: 1px dashed #999999;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+
+#intro-section .about .information > li {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+#intro-section .about .information .email {
+  color: #7e7e7e;
+}
+
+#intro-section .about .buttons > button:not(:last-child) {
+  margin-right: 10px;
+}
+
+#intro-section .about .buttons svg {
+  margin-left: 5px;
+}
+
+/* 04.02.02- Our Services */
+#services-section {
+  padding-bottom: 30px;
+}
+
+#services-section .services .service {
+  padding: 35px 25px;
+  border-radius: 5px;
+  transition: background-color 300ms;
+}
+
+#services-section .services .service:hover {
+  background-color: white;
+}
+
+#services-section .services svg {
+  font-size: 36px;
+  color: #ff305b;
+  transition: scale 300ms;
+}
+
+#services-section .services .service:hover svg {
+  scale: 1.1;
+}
+
+#services-section .services .service-heading {
+  font-size: 22px;
+  padding-block: 20px 15px;
+}
+
+/* 04.02.03- Our Portfolio */
+#portfolio-section {
+  padding-bottom: 30px;
+}
+
+#portfolio-section .filter {
+  margin-bottom: 50px;
+}
+
+#portfolio-section .filter li {
+  display: inline-block;
+}
+
+#portfolio-section .filter li button {
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: inherit;
+  padding: 3px 12px;
+}
+
+#portfolio-section .product {
+  float: left;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+#portfolio-section .product .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+#portfolio-section .product:hover .overlay {
+  opacity: 1;
+}
+
+#portfolio-section .product svg {
+  font-size: 20px;
+  color: #ff305b;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+/* 04.02.04- Stats */
+#stats-section {
+  font-size: 26px;
+}
+
+#stats-section .stat:not(:nth-last-child(-n + 2)) {
+  margin-bottom: 30px;
+}
+
+#stats-section svg {
+  color: #ff305b;
+  margin-bottom: 15px;
+}
+
+#stats-section .number {
+  color: #333333;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+#stats-section h3 {
+  color: #555555;
+  font-size: 16px;
+}
+
+/* 04.02.05- Client's Feedback */
+
+#feedback-section .testimonial {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  text-align: start;
+  position: relative;
+}
+
+#feedback-section .testimonial::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  background-color: #ff305b;
+  border-top-left-radius: 5px;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+#feedback-section .testimonial img {
+  width: 110px;
+  margin: 12px auto 30px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+#feedback-section .testimonial h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+#feedback-section .testimonial .location {
+  color: #777777;
+  margin-bottom: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#feedback-section .testimonial .feedback {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+#feedback-section .testimonial .rating {
+  color: #f1c30d;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+#feedback-section .testimonials-navigation button {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ff305b;
+  border-radius: 50%;
+  margin-inline: 1.5px;
+}
+
+#feedback-section .testimonials-navigation .active {
+  width: 26px;
+  background-color: #ff305b;
+  border-radius: 10px;
+}
+
+/* 04.02.06- Our Blog */
+#blog-section {
+  padding-bottom: 30px;
+}
+
+#blog-section .blog {
+  margin-bottom: 30px;
+}
+
+#blog-section .blog-summary {
+  background-color: white;
+  padding: 20px;
+  text-align: start;
+}
+
+#blog-section .blog-heading {
+  display: inline-block;
+  margin-block: 10px 15px;
+}
+
+#blog-section .blog-heading h3 {
+  font-size: 22px;
+}
+
+#blog-section a,
+#blog-section a * {
+  transition: color 300ms;
+}
+
+#blog-section a:hover,
+#blog-section a:hover,
+#blog-section a:hover * {
+  color: #ff305b;
+}
+
+#blog-section a:hover .arrow {
+  background-color: #ff305b;
+}
+
+#blog-section .arrow {
+  clip-path: polygon(
+    65% 40%,
+    65% 22%,
+    100% 47%,
+    65% 73%,
+    65% 55%,
+    0 55%,
+    0 40%
+  );
+  background-color: #333333;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  transition: background-color 300ms;
+  transform: translateY(2px);
+}
+
+#blog-section .read_more {
+  font-size: 14px;
+  color: #333333;
+  display: inline-block;
+  margin-top: 15px;
+  vertical-align: center;
+}
+
+/* 04.02.07- Contact Us */
+
+#contact-section form {
+  text-align: start;
+}
+
+#contact-section input,
+#contact-section textarea {
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #cccccc;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+#contact-section input {
+  height: 40px;
+}
+
+#contact-section .primary-button {
+  cursor: not-allowed;
+  padding: 0 20px;
+  line-height: 38px;
+  font-size: 14px;
+}
+
+/* 04.03- Footer
+==============================*/
+.page-footer {
+  background-color: #333333;
+  padding-block: 35px;
+  color: white;
+  text-align: center;
+}
+
+.page-footer .socials-links li {
+  display: inline-block;
+  font-size: 18px;
+  margin-inline: 10px;
+}
+
+.page-footer .socials-links a {
+  transition: color 300ms;
+}
+
+.page-footer .socials-links a:hover {
+  color: #ff305b;
+}
+
+.page-footer .rights {
+  margin-top: 7px;
+}
+
+.page-footer .rights a {
+  color: #ff305b;
+}
+
+.page-footer .rights a:hover {
+  text-decoration: underline;
+}
+
+/*==============================
+  05- Responsive Styles
+==============================*/
+
+/* 05.01- Break Point at 0450px
+==============================*/
+@media screen and (min-width: 450px) {
+  /* 05.01.01- Utility Classes
+    ========================*/
+
+  /* 05.01.01.01- Container */
+  .container {
+    max-width: 450px;
+  }
+}
+
+/* 05.02- Break Point at 0768px
+==============================*/
+@media screen and (min-width: 768px) {
+  /* 05.02.01- Utility Classes
+    ========================*/
+
+  /* 05.02.01.01- Container */
+  .container {
+    max-width: 750px;
+  }
+
+  /* 05.02.02- Page Styles
+    ========================*/
+
+  /* 05.02.02.01- Header */
+  .page-header {
+    --title1-width: 102px;
+    --title2-width: 117px;
+  }
+
+  .page-header .nav_toggle-button {
+    display: none;
+  }
+
+  .page-header .nav-links {
+    display: flex;
+  }
+
+  .page-header .header-hero .heading {
+    font-size: 70px;
+  }
+
+  .page-header .header-hero .heading-prefix {
+    font-size: 24px;
+  }
+
+  .page-header .header-hero .heading-subtitles {
+    font-size: 26px;
+    font-weight: 300;
+  }
+
+  /* 05.02.02.02- Main Content */
+
+  .page-content section {
+    padding-block: 70px;
+  }
+
+  .page-content section .heading {
+    font-size: 40px;
+  }
+
+  /* 05.02.02.02.01- Intro */
+
+  #intro-section .frame {
+    width: 345px;
+    float: left;
+    margin-right: 30px;
+  }
+
+  #intro-section .about {
+    margin-top: 0;
+    width: 345px;
+    float: left;
+  }
+
+  #intro-section .about .heading {
+    margin-bottom: 15px;
+  }
+
+  #intro-section .about .paragraph {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  #intro-section .about .information {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  #intro-section .about .information > li {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  #intro-section .about .buttons > button {
+    padding: 10px 24px;
+  }
+
+  /* 05.02.02.02.02- Our Services */
+  #services-section {
+    padding-bottom: 24px;
+  }
+
+  #services-section .services .service {
+    width: 50%;
+    float: left;
+    padding: 40px 15px;
+  }
+
+  #services-section .services .service-heading {
+    font-size: 24px;
+  }
+
+  /* 05.02.02.02.03- Our Portfolio */
+  #portfolio-section {
+    padding-bottom: 50px;
+  }
+
+  #portfolio-section .product {
+    width: 345px;
+  }
+
+  #portfolio-section .product:nth-child(even) {
+    margin-left: 30px;
+  }
+
+  /* 05.02.02.02.04- Stats */
+
+  #stats-section .stat {
+    width: 25%;
+    float: left;
+  }
+
+  #stats-section .stat:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 0;
+  }
+
+  /* 05.02.02.02.05- Client's Feedback */
+
+  #feedback-section .testimonial {
+    padding: 40px;
+  }
+
+  #feedback-section .testimonial img,
+  #feedback-section .testimonial .hero {
+    float: left;
+  }
+
+  #feedback-section .testimonial .hero {
+    width: 510px;
+    margin-left: 20px;
+  }
+
+  /* 05.02.02.02.06- Our Blog  */
+  #blog-section {
+    padding-bottom: 50px;
+  }
+
+  #blog-section .blog {
+    width: 220px;
+    float: left;
+  }
+
+  #blog-section .blog:not(:nth-last-child(-n + 2)) {
+    margin-right: 30px;
+  }
+
+  #blog-section .blog-summary {
+    padding: 12px;
+  }
+
+  #blog-section .blog-heading h3 {
+    font-size: 19px;
+  }
+
+  #blog-section .read_more {
+    font-size: 16px;
+  }
+
+  /* 05.02.02.02.07- Contact Us  */
+
+  #contact-section input:nth-child(-n + 3) {
+    width: 345px;
+  }
+
+  #contact-section input:nth-child(2) {
+    margin-right: 26px;
+  }
+
+  /* 05.02.02.03- Footer */
+  .page-footer {
+    padding-block: 50px;
+  }
+}
+
+/* 05.03- Break Point at 0992px
+==============================*/
+@media screen and (min-width: 992px) {
+  /* 05.03.01- Utility Classes
+    ========================*/
+
+  /* 05.03.01.01- Container */
+  .container {
+    max-width: 970px;
+  }
+
+  /* 05.03.02- Page Styles
+    ========================*/
+
+  /* 05.03.02.01- Header */
+
+  .page-header .nav-links li:not(:first-child) a {
+    padding-left: 10px;
+  }
+
+  .page-header .nav-links li:not(:last-child) a {
+    padding-right: 10px;
+  }
+
+  /* 05.03.02.02- Main Content */
+
+  .page-content section {
+    padding-block: 80px;
+  }
+
+  /* 05.03.02.02.01- Intro */
+
+  #intro-section .container {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+  }
+
+  #intro-section .frame {
+    width: 293.33px;
+    margin-right: 58px;
+    box-shadow: 0 0 0 8px #555555 inset;
+    border-radius: 5px;
+  }
+
+  #intro-section .about {
+    width: 507.83px;
+  }
+
+  #intro-section .about .heading {
+    margin-bottom: 20px;
+  }
+
+  #intro-section .about .paragraph {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  #intro-section .socials {
+    transform: translate(24px, 24px);
+  }
+
+  #intro-section .about .information > li {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  /* 05.03.02.02.02- Our Services */
+  #services-section {
+    padding-bottom: 34px;
+  }
+
+  #services-section .services .service {
+    width: 25%;
+  }
+
+  /* 05.03.02.02.03- Our Portfolio */
+
+  #portfolio-section .product {
+    width: 293.33px;
+  }
+
+  #portfolio-section .product:nth-child(even) {
+    margin-left: 0;
+  }
+
+  #portfolio-section .product:nth-child(-n + 2) {
+    margin-right: 30px;
+  }
+
+  #portfolio-section .product:nth-last-child(-n + 3) {
+    margin-left: 30px;
+  }
+
+  /* 05.03.02.02.04- Client's Feedback */
+
+  #feedback-section .testimonial {
+    width: fit-content;
+    margin-inline: auto;
+  }
+
+  #feedback-section .testimonial .hero {
+    width: 406.66px;
+  }
+
+  /* 05.03.02.02.05- Our Blog */
+
+  #blog-section .blog {
+    width: 293.33px;
+  }
+
+  #blog-section .blog-heading h3 {
+    font-size: 24px;
+  }
+
+  #blog-section .blog-summary {
+    padding: 20px;
+  }
+
+  /* 05.03.02.02.06- Contact Us */
+
+  #contact-section form {
+    width: 616.66px;
+    margin-inline: auto;
+  }
+
+  #contact-section input:nth-child(-n + 3) {
+    width: 293.33px;
+  }
+}
+
+/* 05.04- Break Point at 1200px
+==============================*/
+@media screen and (min-width: 1200px) {
+  /* 05.04.01- Utility Classes
+    ========================*/
+
+  /* 05.04.01.01- Container */
+  .container {
+    max-width: 1170px;
+  }
+
+  /* 05.04.02- Page Styles
+    ========================*/
+
+  /* 05.04.02.01- Main Content */
+
+  .page-content section {
+    padding-block: 100px 125px;
+  }
+
+  /* 05.04.02.01.01- Intro */
+
+  #intro-section .frame {
+    width: 360px;
+    margin-right: 100px;
+  }
+
+  #intro-section .about {
+    width: 582.5px;
+  }
+
+  #intro-section .about .heading {
+    margin-bottom: 25px;
+  }
+
+  #intro-section .about .paragraph {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+  }
+
+  #intro-section .about .information > li {
+    margin-bottom: 25px;
+  }
+
+  /* 05.04.02.01.02- Our Services */
+  #services-section {
+    padding-bottom: 54px;
+  }
+
+  /* 05.04.02.01.03- Our Portfolio */
+  #portfolio-section {
+    padding-bottom: 70px;
+  }
+
+  #portfolio-section .product {
+    width: 360px;
+  }
+
+  /* 05.04.02.01.04- Stats */
+  #stats-section {
+    padding-block: 100px;
+  }
+
+  /* 05.04.02.01.05- Client's Feedback */
+  #feedback-section {
+    padding-block: 100px;
+  }
+
+  #feedback-section .testimonial .hero {
+    width: 540px;
+  }
+
+  /* 05.04.02.01.06- Our Blog */
+  #blog-section {
+    padding-bottom: 70px;
+  }
+
+  #blog-section .blog {
+    width: 360px;
+  }
+
+  /* 05.04.02.01.07- Contact Us */
+  #contact-section {
+    padding-bottom: 100px;
+  }
+
+  #contact-section form {
+    width: 750px;
+  }
+
+  #contact-section input:nth-child(-n + 3) {
+    width: 360px;
+  }
+}
